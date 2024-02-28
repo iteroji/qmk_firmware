@@ -19,18 +19,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #pragma once
-
-//#define USE_MATRIX_I2C
+#define USE_MATRIX_I2C
 
 /* Select hand configuration */
-
-#define MASTER_LEFT
-// #define MASTER_RIGHT
+/* #define MASTER_LEFT */
+#define MASTER_RIGHT
 // #define EE_HANDS
 
-//#define QUICK_TAP_TERM 0
-//#define TAPPING_TERM 100
+//#define QUICK_TAP_TERM 0r* //
+#define TAPPING_TERM 180
+#ifdef HOLD_ON_OTHER_KEY_PRESS
 
+    #undef HOLD_ON_OTHER_KEY_PRESS
+
+#endif // HOLD_ON_OTHER_KEY_PRESS
 #ifdef RGBLIGHT_ENABLE
     #define RGBLIGHT_EFFECT_BREATHING
     #define RGBLIGHT_EFFECT_RAINBOW_MOOD
